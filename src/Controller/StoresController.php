@@ -70,21 +70,40 @@ class StoresController extends AppController
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function edit($id = null)
-    {
-        $store = $this->Stores->get($id, [
-            'contain' => [],
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $store = $this->Stores->patchEntity($store, $this->request->getData());
-            if ($this->Stores->save($store)) {
-                $this->Flash->success(__('The store has been saved.'));
+{
+    $store = $this->Stores->get($id, [
+        'contain' => ['Addresses'],
+    ]);
 
-                return $this->redirect(['action' => 'index']);
+    if ($this->request->is(['patch', 'post', 'put'])) {
+        $store = $this->Stores->patchEntity($store, $this->request->getData());
+
+        // Verifica se o endereço foi alterado
+        if (!empty($this->request->getData('address'))) {
+            $newAddressData = $this->request->getData('address');
+            $newAddress = $this->Stores->Addresses->patchEntity($newAddress, $newAddressData);
+            $newAddress->store_id = $store->id;
+
+            // Deleta o endereço existente
+            if ($store->address && isset($store->address->store_id)) {
+                $this->Stores->Addresses->delete($store->address);
             }
-            $this->Flash->error(__('The store could not be saved. Please, try again.'));
+
+            // Salva o novo endereço
+            if (!$this->Stores->Addresses->save($newAddress)) {
+                $this->Flash->error(__('Erro ao salvar o novo endereço.'));
+                return;
+            }
         }
-        $this->set(compact('store'));
+
+        if ($this->Stores->save($store)) {
+            $this->Flash->success(__('The store has been saved.'));
+            return $this->redirect(['action' => 'index']);
+        }
+        $this->Flash->error(__('Erro ao salvar a loja.'));
     }
+    $this->set(compact('store'));
+}
 
     /**
      * Delete method
@@ -98,9 +117,9 @@ class StoresController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $store = $this->Stores->get($id);
         if ($this->Stores->delete($store)) {
-            $this->Flash->success(__('The store has been deleted.'));
+            $this->Flash->success(__('A loja foi excluída.'));
         } else {
-            $this->Flash->error(__('The store could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Não foi possível excluir. Por favor Tente novamente.'));
         }
 
         return $this->redirect(['action' => 'index']);

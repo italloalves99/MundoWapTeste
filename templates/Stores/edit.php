@@ -21,9 +21,14 @@
             <?= $this->Form->create($store) ?>
             <fieldset>
                 <legend><?= __('Edit Store') ?></legend>
-                <?php
-                    echo $this->Form->control('name');
-                ?>
+                <?= $this->Form->control('name', ['label' => 'Store Name']) ?>
+                <?= $this->Form->control('addresses.0.postal_code', ['label' => 'Postal Code']) ?>
+                <?= $this->Form->control('addresses.0.state', ['label' => 'State']) ?>
+                <?= $this->Form->control('addresses.0.city', ['label' => 'City']) ?>
+                <?= $this->Form->control('addresses.0.sublocality', ['label' => 'Sublocality']) ?>
+                <?= $this->Form->control('addresses.0.street', ['label' => 'Street']) ?>
+                <?= $this->Form->control('addresses.0.street_number', ['label' => 'Street Number']) ?>
+                <?= $this->Form->control('addresses.0.complement', ['label' => 'Complement']) ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
