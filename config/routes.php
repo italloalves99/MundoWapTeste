@@ -56,11 +56,13 @@ return function (RouteBuilder $routes): void {
          * to use (in this case, templates/Pages/home.php)...
          */
         $builder->connect('/', ['controller' => 'Stores', 'action' => 'index', 'home']);
+        
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
          */
         $builder->connect('/pages/*', 'Pages::display');
+        
 
         /*
          * Connect catchall routes for all controllers.

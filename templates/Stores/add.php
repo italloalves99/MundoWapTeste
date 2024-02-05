@@ -23,27 +23,15 @@
         <div class="col-md-2">
             <?= $this->Form->control('addresses.0.postal_code', ['label' => 'Postal Code', 'class' => 'form-control']) ?>
         </div>
-        <div class="col-md-2">
-            <?= $this->Form->control('addresses.0.state', ['label' => 'State', 'class' => 'form-control']) ?>
-        </div>
-        <div class="col-md-2">
-            <?= $this->Form->control('addresses.0.city', ['label' => 'City', 'class' => 'form-control']) ?>
-        </div>
-        <div class="col-md-2">
-            <?= $this->Form->control('addresses.0.sublocality', ['label' => 'Sublocality', 'class' => 'form-control']) ?>
-        </div>
-        <div class="col-md-2">
-            <?= $this->Form->control('addresses.0.street', ['label' => 'Street', 'class' => 'form-control']) ?>
-        </div>
-
+        
         <div class="col-md-2">
             <?= $this->Form->control('addresses.0.street_number', ['label' => 'Street Number', 'class' => 'form-control']) ?>
         </div>
         <div class="col-md-2">
             <?= $this->Form->control('addresses.0.complement', ['label' => 'Complement', 'class' => 'form-control']) ?>
         </div>
-        <div class="col-md-9 mt-2">
-            <?= $this->Form->button(__('Submit')) ?>
+        <div class="col-md-9 mt-4">
+            <?= $this->Form->button(__('Submit'),['class' => 'btn btn-outline-primary']) ?>
         </div>
     </div>
     <?= $this->Form->end() ?>

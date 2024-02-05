@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Controller;
@@ -18,7 +19,7 @@ class StoresController extends AppController
      */
     public function index()
     {
-        $stores = $this->paginate($this->Stores);
+        $stores = $this->paginate($this->Stores->find()->contain(['Addresses']));
 
         $this->set(compact('stores'));
     }
@@ -45,21 +46,21 @@ class StoresController extends AppController
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
     public function add()
-{
-    $store = $this->Stores->newEmptyEntity();
-    if ($this->request->is('post')) {
-        $store = $this->Stores->patchEntity($store, $this->request->getData(), [
-            'associated' => ['Addresses'] // Indica ao CakePHP para salvar os dados do endereço também
-        ]);
-        
-        if ($this->Stores->save($store, ['associated' => ['Addresses']])) {
-            $this->Flash->success(__('A Loja foi Salva.'));
-            return $this->redirect(['action' => 'index']);
+    {
+        $store = $this->Stores->newEmptyEntity();
+        if ($this->request->is('post')) {
+            $store = $this->Stores->patchEntity($store, $this->request->getData(), [
+                'associated' => ['Addresses'] // Indica ao CakePHP para salvar os dados do endereço também
+            ]);
+
+            if ($this->Stores->save($store, ['associated' => ['Addresses']])) {
+                $this->Flash->success(__('A Loja foi Salva.'));
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('Nome em uso.'));
         }
-        $this->Flash->error(__('Nome em uso.'));
+        $this->set(compact('store'));
     }
-    $this->set(compact('store'));
-}
 
 
     /**
@@ -70,40 +71,40 @@ class StoresController extends AppController
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function edit($id = null)
-{
-    $store = $this->Stores->get($id, [
-        'contain' => ['Addresses'],
-    ]);
+    {
+        $store = $this->Stores->get($id, [
+            'contain' => ['Addresses'],
+        ]);
 
-    if ($this->request->is(['patch', 'post', 'put'])) {
-        $store = $this->Stores->patchEntity($store, $this->request->getData());
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $store = $this->Stores->patchEntity($store, $this->request->getData());
 
-        // Verifica se o endereço foi alterado
-        if (!empty($this->request->getData('address'))) {
-            $newAddressData = $this->request->getData('address');
-            $newAddress = $this->Stores->Addresses->patchEntity($newAddress, $newAddressData);
-            $newAddress->store_id = $store->id;
+            // Verifica se o endereço foi alterado
+            if (!empty($this->request->getData('address'))) {
+                $newAddressData = $this->request->getData('address');
+                $newAddress = $this->Stores->Addresses->patchEntity($newAddress, $newAddressData);
+                $newAddress->store_id = $store->id;
 
-            // Deleta o endereço existente
-            if ($store->address && isset($store->address->store_id)) {
-                $this->Stores->Addresses->delete($store->address);
+                // Deleta o endereço existente
+                if ($store->address && isset($store->address->store_id)) {
+                    $this->Stores->Addresses->delete($store->address);
+                }
+
+                // Salva o novo endereço
+                if (!$this->Stores->Addresses->save($newAddress)) {
+                    $this->Flash->error(__('Nome em uso'));
+                    return;
+                }
             }
 
-            // Salva o novo endereço
-            if (!$this->Stores->Addresses->save($newAddress)) {
-                $this->Flash->error(__('Erro ao salvar o novo endereço.'));
-                return;
+            if ($this->Stores->save($store)) {
+                $this->Flash->success(__('A Loja foi salva.'));
+                return $this->redirect(['action' => 'index']);
             }
+            $this->Flash->error(__('Nome em uso.'));
         }
-
-        if ($this->Stores->save($store)) {
-            $this->Flash->success(__('The store has been saved.'));
-            return $this->redirect(['action' => 'index']);
-        }
-        $this->Flash->error(__('Erro ao salvar a loja.'));
+        $this->set(compact('store'));
     }
-    $this->set(compact('store'));
-}
 
     /**
      * Delete method

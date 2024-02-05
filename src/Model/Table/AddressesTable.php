@@ -58,7 +58,13 @@ class AddressesTable extends Table
     public function validationDefault(Validator $validator): Validator
     {
         $validator
-            ->notEmptyString('store_id');
+        ->scalar('store_id')
+        ->notEmptyString('store_id')
+        ->add('store_id', 'unique', [
+            'rule' => 'validateUnique',
+            'provider' => 'table',
+            'message' => 'Este store_id já está em uso para outro endereço.',
+        ]);
 
         $validator
             ->scalar('postal_code')
@@ -66,30 +72,7 @@ class AddressesTable extends Table
             ->requirePresence('postal_code', 'create')
             ->notEmptyString('postal_code');
 
-        $validator
-            ->scalar('state')
-            ->maxLength('state', 2)
-            ->requirePresence('state', 'create')
-            ->notEmptyString('state');
-
-        $validator
-            ->scalar('city')
-            ->maxLength('city', 200)
-            ->requirePresence('city', 'create')
-            ->notEmptyString('city');
-
-        $validator
-            ->scalar('sublocality')
-            ->maxLength('sublocality', 200)
-            ->requirePresence('sublocality', 'create')
-            ->notEmptyString('sublocality');
-
-        $validator
-            ->scalar('street')
-            ->maxLength('street', 200)
-            ->requirePresence('street', 'create')
-            ->notEmptyString('street');
-
+        
         $validator
             ->scalar('street_number')
             ->maxLength('street_number', 200)

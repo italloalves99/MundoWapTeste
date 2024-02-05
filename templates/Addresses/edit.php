@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Address $address
@@ -6,35 +7,38 @@
  */
 ?>
 <div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $address->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $address->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Addresses'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+    <div class="row">
+        <div class="col-md-6">
+            <h4 class="heading"><?= __('Editar Endereço') ?></h4>
         </div>
-    </aside>
+        <div class="col-md-6" style="text-align: right;">
+            <?= $this->Html->link(__('Voltar'), ['controller' => 'Stores', 'action' => 'index'], ['class' => 'btn btn-outline-info']) ?>
+        </div>
+        <hr class="mt-2">
+    </div>
+
+
     <div class="column-responsive column-80">
-        <div class="addresses form content">
+        <div class="stores form content">
             <?= $this->Form->create($address) ?>
-            <fieldset>
-                <legend><?= __('Edit Address') ?></legend>
-                <?php
-                    echo $this->Form->control('store_id', ['options' => $stores]);
-                    echo $this->Form->control('postal_code');
-                    echo $this->Form->control('state');
-                    echo $this->Form->control('city');
-                    echo $this->Form->control('sublocality');
-                    echo $this->Form->control('street');
-                    echo $this->Form->control('street_number');
-                    echo $this->Form->control('complement');
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
+            <div class="row">
+                <div class="col-md-2">
+                    <?= $this->Form->control('store_id', ['class' => 'form-control', 'disabled' => true]); ?>
+                </div>
+                <div class="col-md-2">
+                    <?= $this->Form->control('postal_code', ['class' => 'form-control']); ?>
+                </div>
+
+                <div class="col-md-2">
+                    <?= $this->Form->control('street_number', ['class' => 'form-control']); ?>
+                </div>
+                <div class="col-md-2">
+                    <?= $this->Form->control('complement', ['class' => 'form-control']); ?>
+                </div>
+                <div class="col-md-9 mt-4">
+                    <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-outline-primary']) ?>
+                </div>
+            </div>
             <?= $this->Form->end() ?>
         </div>
     </div>
-</div>
