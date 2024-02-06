@@ -1,0 +1,59 @@
+2024-02-04 12:42:33 notice: 4.5.0 - Dynamic properties will be removed in PHP 8.2. Add `public $Stores = null;` to your class definition or use `#[AllowDynamicProperties]` attribute.
+C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\TestCommand.php, line: 493
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `vendor/cakephp/bake/src/Command/TestCommand.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only.
+Trace:
+C:\wamp64\www\Projetos\mundowap\vendor\cakephp\cakephp\src\Core\functions.php C:\wamp64\www\Projetos\mundowap\vendor\cakephp\cakephp\src\Core\functions.php, line 318
+C:\wamp64\www\Projetos\mundowap\vendor\cakephp\cakephp\src\Datasource\ModelAwareTrait.php C:\wamp64\www\Projetos\mundowap\vendor\cakephp\cakephp\src\Datasource\ModelAwareTrait.php, line 121
+Cake\Controller\Controller->loadModel() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\TestCommand.php, line 493
+Bake\Command\TestCommand->_processController() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\TestCommand.php, line 452
+Bake\Command\TestCommand->generateFixtureList() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\TestCommand.php, line 258
+Bake\Command\TestCommand->bake() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\TestCommand.php, line 132
+Bake\Command\TestCommand->execute() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\ControllerCommand.php, line 207
+Bake\Command\ControllerCommand->bakeTest() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\ControllerCommand.php, line 154
+Bake\Command\ControllerCommand->bake() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\ControllerCommand.php, line 64
+Bake\Command\ControllerCommand->execute() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\AllCommand.php, line 115
+Bake\Command\AllCommand->execute() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\cakephp\src\Console\BaseCommand.php, line 190
+Cake\Console\BaseCommand->run() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\cakephp\src\Console\CommandRunner.php, line 334
+Cake\Console\CommandRunner->runCommand() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\cakephp\src\Console\CommandRunner.php, line 172
+Cake\Console\CommandRunner->run() C:\wamp64\www\Projetos\mundowap\bin\cake.php, line 12
+[main]
+
+2024-02-04 14:00:54 notice: 4.5.0 - Dynamic properties will be removed in PHP 8.2. Add `public $Addresses = null;` to your class definition or use `#[AllowDynamicProperties]` attribute.
+C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\TestCommand.php, line: 493
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `vendor/cakephp/bake/src/Command/TestCommand.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only.
+Trace:
+C:\wamp64\www\Projetos\mundowap\vendor\cakephp\cakephp\src\Core\functions.php C:\wamp64\www\Projetos\mundowap\vendor\cakephp\cakephp\src\Core\functions.php, line 318
+C:\wamp64\www\Projetos\mundowap\vendor\cakephp\cakephp\src\Datasource\ModelAwareTrait.php C:\wamp64\www\Projetos\mundowap\vendor\cakephp\cakephp\src\Datasource\ModelAwareTrait.php, line 121
+Cake\Controller\Controller->loadModel() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\TestCommand.php, line 493
+Bake\Command\TestCommand->_processController() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\TestCommand.php, line 452
+Bake\Command\TestCommand->generateFixtureList() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\TestCommand.php, line 258
+Bake\Command\TestCommand->bake() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\TestCommand.php, line 132
+Bake\Command\TestCommand->execute() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\ControllerCommand.php, line 207
+Bake\Command\ControllerCommand->bakeTest() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\ControllerCommand.php, line 154
+Bake\Command\ControllerCommand->bake() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\ControllerCommand.php, line 64
+Bake\Command\ControllerCommand->execute() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\bake\src\Command\AllCommand.php, line 115
+Bake\Command\AllCommand->execute() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\cakephp\src\Console\BaseCommand.php, line 190
+Cake\Console\BaseCommand->run() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\cakephp\src\Console\CommandRunner.php, line 334
+Cake\Console\CommandRunner->runCommand() C:\wamp64\www\Projetos\mundowap\vendor\cakephp\cakephp\src\Console\CommandRunner.php, line 172
+Cake\Console\CommandRunner->run() C:\wamp64\www\Projetos\mundowap\bin\cake.php, line 12
+[main]
+
+2024-02-06 00:44:32 notice: 4.5.0 - Dynamic properties will be removed in PHP 8.2. Add `public $Api = null;` to your class definition or use `#[AllowDynamicProperties]` attribute.
+C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\bake\src\Command\TestCommand.php, line: 493
+You can disable all deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED`. Adding `vendor/cakephp/bake/src/Command/TestCommand.php` to `Error.ignoredDeprecationPaths` in your `config/app.php` config will mute deprecations from that file only.
+Trace:
+C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\cakephp\src\Core\functions.php C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\cakephp\src\Core\functions.php, line 318
+C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\cakephp\src\Datasource\ModelAwareTrait.php C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\cakephp\src\Datasource\ModelAwareTrait.php, line 121
+Cake\Controller\Controller->loadModel() C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\bake\src\Command\TestCommand.php, line 493
+Bake\Command\TestCommand->_processController() C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\bake\src\Command\TestCommand.php, line 452
+Bake\Command\TestCommand->generateFixtureList() C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\bake\src\Command\TestCommand.php, line 258
+Bake\Command\TestCommand->bake() C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\bake\src\Command\TestCommand.php, line 132
+Bake\Command\TestCommand->execute() C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\bake\src\Command\ControllerCommand.php, line 207
+Bake\Command\ControllerCommand->bakeTest() C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\bake\src\Command\ControllerCommand.php, line 154
+Bake\Command\ControllerCommand->bake() C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\bake\src\Command\ControllerCommand.php, line 64
+Bake\Command\ControllerCommand->execute() C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\cakephp\src\Console\BaseCommand.php, line 190
+Cake\Console\BaseCommand->run() C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\cakephp\src\Console\CommandRunner.php, line 334
+Cake\Console\CommandRunner->runCommand() C:\wamp64\www\Projetos\MundoWapTeste\vendor\cakephp\cakephp\src\Console\CommandRunner.php, line 172
+Cake\Console\CommandRunner->run() C:\wamp64\www\Projetos\MundoWapTeste\bin\cake.php, line 12
+[main]
+
