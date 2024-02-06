@@ -3,7 +3,6 @@
 <head>
     <title>ViaCEP Webservice</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!-- Usei o Exemplo que tinha no proprio site da API https://viacep.com.br/exemplo/jquery/ e adaptei os inputs para o cakephp para funcionar -->
     <!-- Adicionando JQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
@@ -112,7 +111,7 @@
         <div class="col-md-2">
         <?= $this->Form->control('addresses.0.sublocality', ['label' => 'Sublocality', 'class' => 'form-control readonly', 'disabled' => false, 'id' => 'bairro']) ?>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
         <?= $this->Form->control('addresses.0.street', ['label' => 'Street', 'class' => 'form-control readonly', 'disabled' => false, 'id' => 'rua']) ?>
         </div>
         

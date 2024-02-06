@@ -32,9 +32,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+    <!-- Adicionando Bootstrap -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Nav Bar com bg blue e logo a esquerda -->
     <nav class="top-nav mb-4">
         <div style="background:blue; color: blue; height:10px;">.</div>
         <div class="top-nav-title">
@@ -84,5 +87,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     background: #fcebea;
     color: #cc1f1a;
     border-color: #ef5753;
+}
+hr {
+    background-color: blue;
 }
 </style>    

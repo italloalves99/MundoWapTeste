@@ -3,7 +3,7 @@
 <head>
     <title>ViaCEP Webservice</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!-- Usei o Exemplo que tinha no proprio site da API https://viacep.com.br/exemplo/jquery/ e adaptei os inputs para o cakephp para funcionar -->
+    <!-- Usei o Exemplo que tinha no proprio site da API https://viacep.com.br/exemplo/jquery/ e criei os inputs para funcionar -->
     <!-- Adicionando JQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
