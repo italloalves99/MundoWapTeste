@@ -70,11 +70,11 @@
     
     <!-- Modal -->
     <?php foreach ($stores as $store) : ?>
-        <div class="modal fade" id="viewModal<?= $store->id ?>" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel<?= $store->id ?>" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+        <div class="modal fade" id="viewModal<?= $store->id ?>" tabindex="4" role="dialog" aria-labelledby="viewModalLabel<?= $store->id ?>" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="viewModalLabel<?= $store->id ?>">View Store: <?= h($store->name) ?></h5>
+                        <h5 class="modal-title" id="viewModalLabel<?= $store->id ?>">View Stores: <?= h($store->name) ?></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -85,25 +85,27 @@
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th><?= __('Id') ?></th>
-                                            <th><?= __('Store Id') ?></th>
                                             <th><?= __('Postal Code') ?></th>
                                             <th><?= __('State') ?></th>
-                                            <!-- ... (outros cabeçalhos da tabela de endereços) ... -->
+                                            <th><?= __('City') ?></th>
+                                            <th><?= __('Sublocality') ?></th>
+                                            <th><?= __('Street') ?></th>
+                                            <th><?= __('Street Number') ?></th>
                                             <th class="actions"><?= __('Actions') ?></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach ($store->addresses as $addresses) : ?>
                                             <tr>
-                                                <td><?= h($addresses->id) ?></td>
-                                                <td><?= h($addresses->store_id) ?></td>
                                                 <td><?= h($addresses->postal_code) ?></td>
                                                 <td><?= h($addresses->state) ?></td>
-                                                <!-- ... (outros campos da tabela de endereços) ... -->
+                                                <td><?= h($addresses->city) ?></td>
+                                                <td><?= h($addresses->sublocality) ?></td>
+                                                <td><?= h($addresses->street) ?></td>
+                                                <td><?= h($addresses->street_number) ?></td>
                                                 <td class="actions">
                                                     <?= $this->Html->link(__('Edit'), ['controller' => 'Addresses', 'action' => 'edit', $addresses->id], ['class' => 'btn btn-outline-warning']) ?>
-                                                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Addresses', 'action' => 'delete', $addresses->id], ['class' => 'btn btn-outline-danger'], ['confirm' => __('Are you sure you want to delete # {0}?', $addresses->id)]) ?>
+                                                    <!-- <?= $this->Form->postLink(__('Delete'), ['controller' => 'Addresses', 'action' => 'delete', $addresses->id], ['class' => 'btn btn-outline-danger'], ['confirm' => __('Are you sure you want to delete # {0}?', $addresses->id)]) ?> -->
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
@@ -112,9 +114,7 @@
                             </div>
                         <?php endif; ?>
                     </div>
-                    <div class="modal-footer">
-                        <!-- Botões ou ações adicionais no rodapé do modal -->
-                    </div>
+                    
                 </div>
             </div>
         </div>
