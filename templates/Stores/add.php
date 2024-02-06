@@ -104,16 +104,16 @@
             <?= $this->Form->control('addresses.0.complement', ['label' => 'Complement', 'class' => 'form-control']) ?>
         </div>
         <div class="col-md-2">
-        <?= $this->Form->control('addresses.0.city', ['label' => 'Cidade', 'class' => 'form-control readonly', 'disabled' => false, 'id' => 'cidade']) ?>
+        <?= $this->Form->control('addresses.0.city', ['label' => 'City', 'class' => 'form-control readonly', 'disabled' => false, 'id' => 'cidade']) ?>
         </div>
         <div class="col-md-2">
-        <?= $this->Form->control('addresses.0.state', ['label' => 'Estado', 'class' => 'form-control readonly', 'disabled' => false, 'id' => 'uf']) ?>
+        <?= $this->Form->control('addresses.0.state', ['label' => 'State', 'class' => 'form-control readonly', 'disabled' => false, 'id' => 'uf']) ?>
         </div>
         <div class="col-md-2">
-        <?= $this->Form->control('addresses.0.sublocality', ['label' => 'Bairro', 'class' => 'form-control readonly', 'disabled' => false, 'id' => 'bairro']) ?>
+        <?= $this->Form->control('addresses.0.sublocality', ['label' => 'Sublocality', 'class' => 'form-control readonly', 'disabled' => false, 'id' => 'bairro']) ?>
         </div>
         <div class="col-md-2">
-        <?= $this->Form->control('addresses.0.street', ['label' => 'Rua', 'class' => 'form-control readonly', 'disabled' => false, 'id' => 'rua']) ?>
+        <?= $this->Form->control('addresses.0.street', ['label' => 'Street', 'class' => 'form-control readonly', 'disabled' => false, 'id' => 'rua']) ?>
         </div>
         
         <div class="col-md-9 mt-4">
