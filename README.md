@@ -1,53 +1,67 @@
-# CakePHP Application Skeleton
+<h1 align="center"> MundoWapTeste </h1>
+<p align="center">
+Já configurei as Rotas para abrir na Página Stores.
+</p>
 
-![Build Status](https://github.com/cakephp/app/actions/workflows/ci.yml/badge.svg?branch=master)
-[![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
-[![PHPStan](https://img.shields.io/badge/PHPStan-level%207-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
+<p align="center">
+  <a href="#-instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-configuração">Configuração</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-ferramentas">Ferramentas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
 
-A skeleton for creating applications with [CakePHP](https://cakephp.org) 4.x.
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+## 👨‍💻 Instalação
 
-## Installation
+1. Faça o clone do projeto.
 
-1. Download [Composer](https://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
-
-If Composer is installed globally, run
-
-```bash
-composer create-project --prefer-dist cakephp/app
+```
+git clone https://github.com/italloalves99/MundoWapTeste.git
 ```
 
-In case you want to use a custom app dir name (e.g. `/myapp/`):
-
-```bash
-composer create-project --prefer-dist cakephp/app myapp
+2. Em seguida, abra o terminal e digite `composer install`, insira `y` para todas as opções.
+```
+composer install
 ```
 
-You can now either use your machine's webserver to view the default home page, or start
-up the built-in webserver with:
-
-```bash
-bin/cake server -p 8765
+3. Você pode usar o servidor do cake para desenvolvimento. No terminal, digite:
+```
+bin/cake server
 ```
 
-Then visit `http://localhost:8765` to see the welcome page.
 
-## Update
+## ⚙️ Configuração
 
-Since this skeleton is a starting point for your application and various files
-would have been modified as per your needs, there isn't a way to provide
-automated upgrades, so you have to do any updates manually.
+Edite o config/app_local.php específico do ambiente e configure 'Datasources' para conexão com o banco de dados. 
 
-## Configuration
 
-Read and edit the environment specific `config/app_local.php` and set up the
-`'Datasources'` and any other configuration relevant for your application.
-Other environment agnostic settings can be changed in `config/app.php`.
+## 🚀 Tecnologias
 
-## Layout
+> Front-end: 
 
-The app skeleton uses [Milligram](https://milligram.io/) (v1.3) minimalist CSS
-framework by default. You can, however, replace it with any other library or
-custom styles.
+- [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element)
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+
+> Back-end: 
+
+- [PHP](https://www.php.net/)
+- [CakePHP](https://cakephp.org/)
+
+> Banco de dados
+
+- [MySQL](https://www.mysql.com/)
+
+
+## 🛠 Ferramentas
+
+- [Git](https://git-scm.com/docs/git/pt_BR)
+- [Github](https://docs.github.com/pt)
+- [VsCode](https://code.visualstudio.com/docs)
+- [Workbench](https://dev.mysql.com/doc/workbench/en/)
+
+
+
+
+<a href='#top'>
