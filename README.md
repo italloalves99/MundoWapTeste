@@ -1,6 +1,6 @@
 <h1 align="center"> MundoWapTeste </h1>
 <p align="center">
-Já configurei as Rotas para abrir na Página Stores.
+Configurei as Rotas para abrir na Página Stores.
 </p>
 
 <p align="center">
@@ -19,12 +19,22 @@ Já configurei as Rotas para abrir na Página Stores.
 git clone https://github.com/italloalves99/MundoWapTeste.git
 ```
 
-2. Em seguida, abra o terminal e digite `composer install`, insira `y` para todas as opções.
+2. Crie uma Conexão no Mysql 
+   Hostname: 127.0.0.1 Port: 3306
+   Username: root
+   Password: ''
+
+3. Crie Um Schema Para criar esse banco de dados use o script abaixo
 ```
-composer install
+   CREATE DATABASE mundowap_test_cakephp;
+```
+4. Em seguida, execute as migrações do banco de dados com o comando bin/cake migrations migrate no terminal.
+```
+bin/cake migrations migrate
+
 ```
 
-3. Você pode usar o servidor do cake para desenvolvimento. No terminal, digite:
+5. Você pode usar o servidor do cake para desenvolvimento. No terminal, digite:
 ```
 bin/cake server
 ```
