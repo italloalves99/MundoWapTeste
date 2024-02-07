@@ -19,12 +19,13 @@ Configurei as Rotas para abrir na Página Stores.
 git clone https://github.com/italloalves99/MundoWapTeste.git
 ```
 
-2. Crie uma Conexão no Mysql 
+2. Crie uma Conexão no Mysql
+   Connection Name: `NomedaSuaPreferencia`
    Hostname: 127.0.0.1 Port: 3306
    Username: root
    Password: ''
 
-3. Crie Um Schema Para criar esse banco de dados use o script abaixo
+4. Crie Um Schema Para criar esse banco de dados use o script abaixo
 ```
    CREATE DATABASE mundowap_test_cakephp;
 ```
